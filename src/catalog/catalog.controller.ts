@@ -7,7 +7,7 @@ export class CatalogController {
   constructor(private catalogService: CatalogService) {}
 
   @Get()
-  findAll() {
+  findAll(): Promise<AddCatDto[]> {
     return this.catalogService.findAll();
   }
 
@@ -17,7 +17,7 @@ export class CatalogController {
   }
 
   @Post()
-  createCat(@Body() addCatDto: AddCatDto): AddCatDto {
+  createCat(@Body() addCatDto: AddCatDto): Promise<AddCatDto> {
     return this.catalogService.createCat(addCatDto);
   }
 

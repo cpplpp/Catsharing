@@ -6,7 +6,6 @@ import { CatalogModule } from './catalog/catalog.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot(), CatalogModule],
-  // imports: [CatalogModule],
   controllers: [AppController],
   providers: [AppService],
 })
