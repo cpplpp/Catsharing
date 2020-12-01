@@ -29,7 +29,7 @@ Change DB_URL to represent path to your database
 # API specification    
 
 ### Get full catalog
-`GET l/catalog`
+`GET /catalog`
 
 ### Get one cat
 `GET /catalog/id`
