@@ -51,9 +51,6 @@ export class CatalogController {
     return `Cat number ${id} is now free`
   }
 
-  // /catalog/1/unrent
-  // /catalog/?25
-  // //patch
 }
 
 
