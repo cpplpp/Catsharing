@@ -37,12 +37,16 @@ export class CatalogService {
   }
 
   async updateCat(id: number, cat: UpdateCatDto): Promise<UpdateResult> {
-    return await this.catalogRepository.update(id, cat)
+    return await this.catalogRepository.update(id, cat);
   }
 
-  // test(id: number): Promise<AddCatDto> {
-  //   return this.catalogRepository.findOne(id);
-  // }
+  async rentCat(id: number, data: Object): Promise<UpdateResult> {
+    return await this.catalogRepository.update(id, data);
+  }
+
+  async freeCat(id: number, data: Object): Promise<UpdateResult> {
+    return await this.catalogRepository.update(id, data);
+  }
 
 }
 

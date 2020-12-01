@@ -34,14 +34,22 @@ export class CatalogController {
   }
 
   @Put(':id')
-  updateCat(@Param('id') id: number, @Body() updateCatDto: UpdateCatDto): Promise<UpdateResult> {
-    return this.catalogService.updateCat(id, updateCatDto);
+  updateCat(@Param('id') id: number, @Body() updateCatDto: UpdateCatDto): string {
+    this.catalogService.updateCat(id, updateCatDto);
+    return `Cat number ${id} has been updated`
   }
 
-  // @Get('/xd/:id')
-  // test(@Param('id') id): Promise<AddCatDto> {
-  //   return this.catalogService.findOne(id);
-  // }
+  @Patch('/:id/rent')
+  rentCat(@Param('id') id): string{
+    this.catalogService.updateCat(id, {status: 'busy'});
+    return `Cat number ${id} rented successfully`
+  }
+
+  @Patch('/:id/free')
+  freeCat(@Param('id') id): string{
+    this.catalogService.updateCat(id, {status: 'free'});
+    return `Cat number ${id} is now free`
+  }
 
   // /catalog/1/unrent
   // /catalog/?25
